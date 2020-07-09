@@ -1,11 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Example:
-#
-#   Person.create(first_name: 'Eric', last_name: 'Kelly')
+category_1 = Category.create(name: "Rainbow Horror")
+category_2 = Category.create(name: "Squirrel Mysteries")
 
-post "/starships/:starship_id/crew_member" do 
-  # starship = Starship.find(params[:starship_id])
-  CrewMember.create(name: "Fred", star_ship_id: params[:starship_id])
-end
+book_1 = Book.create(title: "Barry Shlotter and the Chamer of Sekrets", author: "K,J Rowling")
+book_2 = Book.create(title: "Barry Shlotter and the Dude of Azzerblam", author: "K,J Rowling")
+
+Categorization.create(category: category_1, book: book_1)
+Categorization.create(category: category_1, book: book_2)
